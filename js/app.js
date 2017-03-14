@@ -180,7 +180,7 @@ $(document).ready(function() {
             $("." + path).fadeIn(500);
             $("." + path).fadeOut(500);
         }
-        setTimeout(resetMoves, 4000);
+        setTimeout(resetMoves, 700);
     }
     $(".reset").click(function(e) {
         resetMoves();
