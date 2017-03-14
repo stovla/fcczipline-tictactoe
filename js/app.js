@@ -187,19 +187,21 @@ $(document).ready(function() {
     });
     // reset everything
     function resetMoves() {
-        board = [null, null, null, null, null, null, null, null, null];
-        playerTurn = true;
-        human = "";
-        computer = "";
-        myTurn = false;
-        game = false;
-        $(".btn").text("");
-        $(".btn").removeClass("btn-info btn-danger");
-        $(".choose-sides").animate({ left: "35%", "z-index": "1" });
-        $(".choose-sides").animate({ left: "50%", }, "slow");
-        $("table").animate({ left: "60%", "z-index": "-1" });
-        $("table").animate({ left: "50%", }, "slow");
-        $(".btn").css("opacity", "0.3");
+        if(game){
+            board = [null, null, null, null, null, null, null, null, null];
+            playerTurn = true;
+            human = "";
+            computer = "";
+            myTurn = false;
+            game = false;
+            $(".btn").text("");
+            $(".btn").removeClass("btn-info btn-danger");
+            $(".choose-sides").animate({ left: "35%", "z-index": "1" });
+            $(".choose-sides").animate({ left: "50%", }, "slow");
+            $("table").animate({ left: "60%", "z-index": "-1" });
+            $("table").animate({ left: "50%", }, "slow");
+            $(".btn").css("opacity", "0.3");
+        }
     }
     // display popup winner message
     function winnerMessage(player) {
