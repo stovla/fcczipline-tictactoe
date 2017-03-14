@@ -1,3 +1,4 @@
+"use stict";
 $(document).ready(function() {
 
     var board = [null, null, null, null, null, null, null, null, null];
@@ -165,6 +166,7 @@ $(document).ready(function() {
     }
     // display winner function and update the game ++++++ (game reset needs to be created)
     function displayWinner(player) {
+
         var path;
         if (player === human) {
             path = "winner";
@@ -179,14 +181,14 @@ $(document).ready(function() {
             $("." + path).fadeIn(500);
             $("." + path).fadeOut(500);
         }
-        setTimeout(resetMoves, 700);
+        setTimeout(resetMoves, 300);
     }
     $(".reset").click(function(e) {
         resetMoves();
     });
     // reset everything
     function resetMoves() {
-        if(game){
+        if (game) {
             board = [null, null, null, null, null, null, null, null, null];
             playerTurn = true;
             human = "";
@@ -199,9 +201,9 @@ $(document).ready(function() {
             $(".choose-sides").animate({ left: "50%", }, "slow");
             $("table").animate({ left: "60%", "z-index": "-1" });
             $("table").animate({ left: "50%", }, "slow");
-            $(".btn").css("opacity", "0.3");
+            // $(".btn").css("opacity", "0.3");
+            game = false;
         }
-        game = false;
     }
     // display popup winner message
     function winnerMessage(player) {
