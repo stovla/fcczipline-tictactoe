@@ -165,7 +165,6 @@ $(document).ready(function() {
     }
     // display winner function and update the game ++++++ (game reset needs to be created)
     function displayWinner(player) {
-        game = false;
         var path;
         if (player === human) {
             path = "winner";
@@ -181,6 +180,7 @@ $(document).ready(function() {
             $("." + path).fadeOut(500);
         }
         setTimeout(resetMoves, 700);
+        game = false;
     }
     $(".reset").click(function(e) {
         resetMoves();
