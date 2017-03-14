@@ -180,7 +180,6 @@ $(document).ready(function() {
             $("." + path).fadeOut(500);
         }
         setTimeout(resetMoves, 700);
-        game = false;
     }
     $(".reset").click(function(e) {
         resetMoves();
@@ -202,6 +201,7 @@ $(document).ready(function() {
             $("table").animate({ left: "50%", }, "slow");
             $(".btn").css("opacity", "0.3");
         }
+        game = false;
     }
     // display popup winner message
     function winnerMessage(player) {
