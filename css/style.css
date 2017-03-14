@@ -1,30 +1,116 @@
 * {
-  margin: 0 auto;
-  padding: 0;
+    margin: 0 auto;
+    padding: 0;
 }
+
 body {
-  margin: 0 auto;
+    margin: 0 auto;
+    background: darkcyan;
 }
-h1 {
-  text-align: center;
+
+.winner,
+.tie,
+.loser,
+table,
+.choose-sides,
+.display {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
 }
+
 table {
-  border-radius: 5px;
-  border: 3px solid gray;
+    margin-left: -174px;
+    margin-top: -174px;
+    border-radius: 5px;
+    z-index: -1;
 }
+
+tr {
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px 2px;
+}
+
 .btn {
-  width: 100px;
-  height: 100px;
-  margin: 5px;
+    font-size: xx-large;
+    text-transform: uppercase;
+    width: 100px;
+    height: 100px;
+    margin: 7px;
+    opacity: 0.3;
+}
+
+table tr:nth-child(2) {
+    border-bottom: 3px solid #335355;
+    border-top: 3px solid #335355;
+}
+
+tr td:nth-child(2) {
+    border-left: 3px solid #335355;
+    border-right: 3px solid #335355;
 }
 
 .choice {
-  width: 50px;
-  height: 50px;
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
 }
+
 button:disabled {
-  opacity: 1;
+    opacity: 1;
 }
+
 .btn[disabled] {
-  opacity: 1;
+    opacity: 1 !important;
+}
+
+.choose-sides {
+    font-size: 20px;
+    margin-left: -100px;
+    margin-top: -50px;
+    width: 200px;
+    height: auto;
+    text-align: center;
+    padding: 5px;
+    background: cadetblue;
+    border-radius: 5px;
+    box-shadow: 0px 2px 2px 2px;
+}
+
+.choose-sides p {
+    color: #fff;
+}
+
+.reset {
+    position: absolute;
+    left: 50%;
+    bottom: 15% !important;
+    display: block;
+    border-radius: 5px;
+    padding: 7px 30px;
+    margin: 0 auto;
+    margin-left: -55px;
+}
+
+.winner,
+.tie,
+.loser {
+    display: none;
+    margin-left: -200px;
+    margin-top: -150px;
+    width: 400px;
+    height: 300px;
+    text-align: center;
+    font-size: 105px;
+    font-weight: 800;
+    z-index: 10;
+    text-shadow: 0px 2px 2px 2px #fff;
+}
+
+@media screen and (max-width:430px) {
+    .reset {
+        display: none;
+    }
 }
