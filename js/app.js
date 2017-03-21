@@ -14,7 +14,7 @@ $(document).ready(function() {
         if (this.value === "x") {
             human = "X", computer = "O", myTurn = true;
         } else {
-            human = "O", computer = "X", myTurn = false, setTimeout(aiTurn, 2000);
+            human = "O", computer = "X", myTurn = false, setTimeout(aiTurn, 1300);
         }
         console.log("player is " + human, ": and computer is " + computer);
     });
@@ -144,7 +144,7 @@ $(document).ready(function() {
                 } else if (isBoardFull(board)) {
                     displayWinner();
                 }
-                return setTimeout(aiTurn, 2000);
+                return setTimeout(aiTurn, 1300);
             }
         }
     });
