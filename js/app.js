@@ -199,6 +199,7 @@ $(document).ready(function() {
             $(".choose-sides").fadeIn(400);
             $("table").css("pointer-events", "none");
             $(".btn").text("");
+            $(".btn").removeClass("btn-info btn-danger");
             game = false;
         }
     }
