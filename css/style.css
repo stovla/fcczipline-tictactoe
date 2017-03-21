@@ -8,9 +8,6 @@ body {
     background: darkcyan;
 }
 
-.winner,
-.tie,
-.loser,
 table,
 .choose-sides,
 .display {
@@ -22,6 +19,7 @@ table,
 }
 
 table {
+    pointer-events: none;
     margin-left: -174px;
     margin-top: -174px;
     border-radius: 5px;
@@ -100,13 +98,18 @@ button:disabled {
 .winner,
 .tie,
 .loser {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
     display: none;
-    margin-left: -200px;
-    margin-top: -150px;
-    width: 400px;
-    height: 300px;
+    margin-left: -150px;
+    margin-top: -25px;
+    width: 300px;
+    height: 50px;
     text-align: center;
-    font-size: 105px;
+    font-size: 2em;
     font-weight: 800;
     z-index: 10;
     text-shadow: 0px 2px 2px 2px #fff;

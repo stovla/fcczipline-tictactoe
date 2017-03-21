@@ -8,15 +8,14 @@ $(document).ready(function() {
     var game = false;
 
     $('.choice').on('click', function() {
-        // $(".choose-sides").addClass("move-to-back");
-        // $("table").addClass("move-to-front");
-        $(".choose-sides").animate({ left: "35%", "z-index": "-1" });
-        $(".choose-sides").animate({ left: "50%", }, "slow");
-        $("table").animate({ left: "60%", "z-index": "1" });
-        $("table").animate({ left: "50%", }, "slow");
+        $(".choose-sides").fadeOut(400);
+        $("table").css("pointer-events", "visible");
         game = true;
-        myTurn = true;
-        this.value == "x" ? (human = "X", computer = "O") : (human = "O", computer = "X");
+        if (this.value === "x") {
+            human = "X", computer = "O", myTurn = true;
+        } else {
+            human = "O", computer = "X", myTurn = false, setTimeout(aiTurn, 2000);
+        }
         console.log("player is " + human, ": and computer is " + computer);
     });
     // update the board
@@ -145,7 +144,7 @@ $(document).ready(function() {
                 } else if (isBoardFull(board)) {
                     displayWinner();
                 }
-                return setTimeout(aiTurn, 100);
+                return setTimeout(aiTurn, 2000);
             }
         }
     });
@@ -160,6 +159,8 @@ $(document).ready(function() {
             }
             if (!isBoardFull(board) && isWinner(board, computer)) {
                 return displayWinner(computer);
+            } else if (isBoardFull(board) && !isWinner(board, computer)) {
+                return displayWinner();
             }
             myTurn = true;
         }
@@ -195,13 +196,9 @@ $(document).ready(function() {
             computer = "";
             myTurn = false;
             game = false;
+            $(".choose-sides").fadeIn(400);
+            $("table").css("pointer-events", "none");
             $(".btn").text("");
-            $(".btn").removeClass("btn-info btn-danger");
-            $(".choose-sides").animate({ left: "35%", "z-index": "1" });
-            $(".choose-sides").animate({ left: "50%", }, "slow");
-            $("table").animate({ left: "60%", "z-index": "-1" });
-            $("table").animate({ left: "50%", }, "slow");
-            // $(".btn").css("opacity", "0.3");
             game = false;
         }
     }
